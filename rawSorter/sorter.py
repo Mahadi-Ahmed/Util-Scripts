@@ -15,14 +15,10 @@ def organize_raw_files(input_dir, output_dir):
 
         # Check if it's a file and its extension is RAW
         if os.path.isfile(file_path) and filename.lower().endswith('.raf'):
-            # Create a subdirectory in the output directory based on the file extension
-            file_type_dir = os.path.join(output_dir, 'rawFiles')
-            if not os.path.exists(file_type_dir):
-                os.makedirs(file_type_dir)
 
             # Move the file to the new directory
-            shutil.move(file_path, os.path.join(file_type_dir, filename))
-            print(f"Moved {filename} to {file_type_dir}")
+            shutil.move(file_path, os.path.join(output_directory, filename))
+            print(f"Moved {filename} to {output_directory}")
 
 # Replace 'input_directory' and 'output_directory' with your actual directory paths
 input_directory = '/Users/mahadiahmed/Pictures/fujifilm/101-FUJI'
