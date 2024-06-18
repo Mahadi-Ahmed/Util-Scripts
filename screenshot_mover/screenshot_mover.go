@@ -31,5 +31,5 @@ func main() {
 	}
   fmt.Print("moved files: ")
   fmt.Println(movedPngs)
-  fmt.Print("to ~/Documents/screenshots")
+  fmt.Println("to ~/Documents/screenshots ")
 }
