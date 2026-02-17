@@ -13,23 +13,24 @@ func check(e error) {
 }
 
 func main() {
+	// TODO: If screenscreenShotsDir does not exist, create it
 	desktopDir := "/Users/mahadiahmed/Desktop"
 	screenShotsDir := "/Users/mahadiahmed/Documents/screenshots"
 	// screenShotsDir := "/Users/mahadiahmed/Documents/goMoverTest"
 
 	dir, err := os.ReadDir(desktopDir)
 	check(err)
-  var movedPngs []string
+	var movedPngs []string
 	for _, file := range dir {
 		fileName := file.Name()
-		if strings.Contains(fileName, "png") {
+		if strings.Contains(fileName, "png") || strings.Contains(fileName, "mov") {
 			sourceFullPath := desktopDir + "/" + fileName
 			destinationFullPath := screenShotsDir + "/" + fileName
-      movedPngs = append(movedPngs, fileName)
+			movedPngs = append(movedPngs, fileName)
 			os.Rename(sourceFullPath, destinationFullPath)
 		}
 	}
-  fmt.Print("moved files: ")
-  fmt.Println(movedPngs)
-  fmt.Println("to ~/Documents/screenshots ")
+	fmt.Print("moved files: ")
+	fmt.Println(movedPngs)
+	fmt.Println("to ~/Documents/screenshots ")
 }
