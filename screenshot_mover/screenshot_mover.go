@@ -13,10 +13,11 @@ func check(e error) {
 }
 
 func main() {
-	// TODO: If screenscreenShotsDir does not exist, create it
 	desktopDir := "/Users/mahadiahmed/Desktop"
 	screenShotsDir := "/Users/mahadiahmed/Documents/screenshots"
-	// screenShotsDir := "/Users/mahadiahmed/Documents/goMoverTest"
+
+	err := os.MkdirAll(screenShotsDir, 0755)
+	check(err)
 
 	dir, err := os.ReadDir(desktopDir)
 	check(err)
