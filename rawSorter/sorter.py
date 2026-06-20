@@ -21,7 +21,7 @@ def organize_raw_files(input_dir, output_dir):
             print(f"Moved {filename} to {output_directory}")
 
 # Replace 'input_directory' and 'output_directory' with your actual directory paths
-input_directory = '/Users/mahadiahmed/Pictures/fujifilm/101-FUJI'
-output_directory = '/Users/mahadiahmed/Pictures/fujifilm/101-FUJI/rawFiles'
+input_directory = '/Users/mahadiahmed/Pictures/fujifilm/20 juni 2026'
+output_directory = input_directory + '/rawFiles'
 
 organize_raw_files(input_directory, output_directory)
